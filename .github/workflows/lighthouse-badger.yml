@@ -8,6 +8,9 @@
 
 name: "Lighthouse Badger"
 
+permissions:
+  contents: write
+
 ########################################################################
 # DEFINE YOUR INPUTS AND TRIGGERS IN THE FOLLOWING
 ########################################################################
@@ -40,8 +43,8 @@ jobs:
     steps:
       - name: Preparatory Tasks
         run: |
-          REPOSITORY=`expr "${{ env.REPO_BRANCH }}" : "\([^ ]*\)"`
-          BRANCH=`expr "${{ env.REPO_BRANCH }}" : ".* \([^ ]*\)"`
+          REPOSITORY=`expr "${{ env.REPO_BRANCH }}" : "\\([^ ]*\\)"`
+          BRANCH=`expr "${{ env.REPO_BRANCH }}" : ".* \\([^ ]*\\)"`
           echo "REPOSITORY=$REPOSITORY" >> $GITHUB_ENV
           echo "BRANCH=$BRANCH" >> $GITHUB_ENV
         env:
@@ -49,7 +52,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: ${{ env.REPOSITORY }}
-          token: ${{ secrets.LIGHTHOUSE_BADGER_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ env.BRANCH }}
       - uses: actions/checkout@v4
         with:
