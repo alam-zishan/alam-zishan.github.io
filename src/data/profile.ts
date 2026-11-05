@@ -18,26 +18,48 @@ export type Job = {
   end: string;
   role: string;
   company: string;
-  summary: string;
+  summary?: string;
   points?: string[];
 };
 
-// TODO: replace placeholders with your real history.
+// Source: LinkedIn (linkedin.com/in/az03). Add bullets in `points`.
 export const experience: Job[] = [
   {
-    start: '20XX',
+    start: 'Jan 2025',
     end: 'now',
     role: 'Platform Engineer',
     company: 'NVIDIA',
-    summary: 'Infrastructure tooling, release platforms, and AI-assisted vulnerability scanning for CUDA.',
+    summary: 'Compute Software. Infrastructure tooling and AI-assisted vulnerability scanning across the CUDA org.',
     points: [],
   },
   {
-    start: '20XX',
-    end: '20XX',
-    role: 'Previous role',
-    company: 'Company',
-    summary: 'One line on what you shipped.',
+    start: 'May 2024',
+    end: 'Aug 2024',
+    role: 'Technical Program Manager Intern',
+    company: 'NVIDIA',
+    points: [],
+  },
+  {
+    start: 'Aug 2023',
+    end: 'May 2024',
+    role: 'Software Engineer Intern',
+    company: 'Allegiant',
+    summary: 'Mad Dogs Dev Team.',
+    points: [],
+  },
+  {
+    start: 'Jun 2023',
+    end: 'Aug 2023',
+    role: 'Civic Digital Fellow',
+    company: 'Coding it Forward',
+    points: [],
+  },
+  {
+    start: 'May 2023',
+    end: 'Aug 2023',
+    role: 'Software Engineer Fellow',
+    company: 'U.S. Census Bureau',
+    summary: 'Commodity Flow Survey Team.',
     points: [],
   },
 ];
