@@ -30,7 +30,7 @@ export const experience: Job[] = [
     end: 'now',
     role: 'Platform Engineer',
     company: 'NVIDIA',
-    summary: 'Compute SW',
+    summary: 'Compute Software',
     points: [],
   },
   {
