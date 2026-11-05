@@ -4,7 +4,8 @@ export const profile = {
   name: 'Alam Zishan',
   handle: 'az03',
   title: 'Platform Engineer',
-  bio: 'Platform engineer at NVIDIA. I build internal infrastructure tooling and lead AI-assisted vulnerability scanning across the CUDA org. Outside work, I teach agents to do odd jobs and lift heavy things.',
+  headline: 'Platform Engineer @ NVIDIA',
+  bio: 'Building internal infrastructure tooling & leading agentic vulnerability scans across CUDA. Previously did driver releases.',
   location: '', // e.g. 'San Jose, CA'
   links: [
     { label: 'github', href: 'https://github.com/alam-zishan' },
@@ -29,7 +30,7 @@ export const experience: Job[] = [
     end: 'now',
     role: 'Platform Engineer',
     company: 'NVIDIA',
-    summary: 'Compute Software. Infrastructure tooling and AI-assisted vulnerability scanning across the CUDA org.',
+    summary: 'Compute SW',
     points: [],
   },
   {
@@ -37,6 +38,7 @@ export const experience: Job[] = [
     end: 'Aug 2024',
     role: 'Technical Program Manager Intern',
     company: 'NVIDIA',
+    summary: 'Compute Software',
     points: [],
   },
   {

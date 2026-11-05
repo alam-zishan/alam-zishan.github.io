@@ -8,7 +8,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = profile.bio } = Astro.props;
+const { title, description = `${profile.headline}. ${profile.bio}` } = Astro.props;
 const pageTitle = title ? `${title} · ${profile.name}` : profile.name;
 
 const linkFor = (label: string) => profile.links.find((l) => l.label === label)?.href;

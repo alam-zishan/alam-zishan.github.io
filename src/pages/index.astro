@@ -12,7 +12,7 @@ const featured = (projects as Project[]).slice(0, 4);
 
 <Base>
   <h1>{profile.name}</h1>
-  <p class="lede">{profile.bio}</p>
+  <p class="lede">{profile.headline}<br />{profile.bio}</p>
 
   <h2 class="section">Experience</h2>
   <Experience jobs={experience} />
