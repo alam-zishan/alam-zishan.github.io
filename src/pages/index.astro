@@ -13,10 +13,6 @@ const featured = (projects as Project[]).slice(0, 4);
 <Base>
   <h1>{profile.name}</h1>
   <p class="lede">{profile.bio}</p>
-  <div class="links">
-    {profile.links.map((l) => <a href={l.href} rel="me noopener">{l.label} ↗</a>)}
-    <a href={url('/resume/')}>resume</a>
-  </div>
 
   <h2 class="section">Experience</h2>
   <Experience jobs={experience} />

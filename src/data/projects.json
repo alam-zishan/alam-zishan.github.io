@@ -2,7 +2,7 @@
   {
     "slug": "pokemon-agent",
     "name": "Pokémon Platinum agent",
-    "status": "live",
+    "status": "wip",
     "summary": "An agent learning to play Pokémon Platinum from screen input.",
     "stat": "",
     "progress": null,
@@ -12,7 +12,7 @@
   {
     "slug": "training-log",
     "name": "Training log",
-    "status": "live",
+    "status": "wip",
     "summary": "Progressive overload tracking for calisthenics and weighted resistance work.",
     "stat": "",
     "progress": null,
@@ -22,7 +22,7 @@
   {
     "slug": "event-radar",
     "name": "Event radar",
-    "status": "live",
+    "status": "wip",
     "summary": "Finds local tech events that match my interests and signs me up.",
     "stat": "",
     "progress": null,

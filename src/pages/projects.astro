@@ -10,7 +10,7 @@ const list = [...(projects as Project[])].sort((a, b) => order[a.status] - order
 
 <Base title="Projects">
   <h1>Projects</h1>
-  <p class="lede">Things I build outside work. Cards marked <span class="pill live">live</span> update on their own.</p>
+  <p class="lede">Things I build outside work.</p>
   <h2 class="section">All</h2>
   <div class="grid">
     {list.map((p) => <ProjectCard project={p} full />)}

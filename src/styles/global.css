@@ -49,9 +49,9 @@ a:hover { color: var(--moss); border-bottom-color: var(--moss); }
   padding-bottom: 8px;
 }
 .logo { font-family: var(--mono); font-size: 13.5px; color: var(--moss); border: 0; }
-.nav { display: flex; gap: 18px; font-size: 13.5px; }
-.nav a { color: var(--muted); border: 0; }
-.nav a:hover, .nav a[aria-current='page'] { color: var(--text); }
+.social { display: flex; gap: 16px; align-items: center; }
+.social a { color: var(--muted); border: 0; display: inline-flex; padding: 2px; }
+.social a:hover { color: var(--moss); }
 
 /* Type */
 h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; margin: 44px 0 10px; }
