@@ -1,0 +1,21 @@
+---
+import type { Job } from '../data/profile';
+
+interface Props {
+  jobs: Job[];
+  full?: boolean;
+}
+
+const { jobs, full = false } = Astro.props;
+---
+
+{jobs.map((j) => (
+  <div class="job">
+    <span class="yr">{j.start} — {j.end}</span>
+    <div>
+      <div>{j.role} · {j.company}</div>
+      <div class="sum">{j.summary}</div>
+      {full && j.points && j.points.length > 0 && <ul>{j.points.map((pt) => <li>{pt}</li>)}</ul>}
+    </div>
+  </div>
+))}

@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+import { profile } from '../data/profile';
+import { url } from '../lib/url';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = profile.bio } = Astro.props;
+const pageTitle = title ? `${title} · ${profile.name}` : profile.name;
+
+const nav = [
+  { href: '/', label: 'about' },
+  { href: '/resume/', label: 'resume' },
+  { href: '/projects/', label: 'projects' },
+  { href: '/writing/', label: 'writing' },
+];
+
+const here = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => {
+  const target = url(href).replace(/\/$/, '') || '/';
+  return target === url('/').replace(/\/$/, '') ? here === target || here === '/' : here.startsWith(target);
+};
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#101211" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href={url('/')}>~/{profile.handle}</a>
+      <nav class="nav" aria-label="Main">
+        {nav.map((n) => (
+          <a href={url(n.href)} aria-current={isCurrent(n.href) ? 'page' : undefined}>{n.label}</a>
+        ))}
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <span>© {year} {profile.name}</span>
+      <span>coffee? <a href={profile.links.find((l) => l.label === 'linkedin')?.href}>say hi</a></span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+---
+import Base from './Base.astro';
+import { fmtDate } from '../lib/posts';
+import { url } from '../lib/url';
+
+const { frontmatter } = Astro.props;
+const date = new Date(frontmatter.date);
+---
+
+<Base title={frontmatter.title} description={frontmatter.summary}>
+  <h1>{frontmatter.title}</h1>
+  <p class="muted mono" style="font-size:12.5px;margin:0 0 28px"><time datetime={date.toISOString()}>{fmtDate(date)}</time></p>
+  <article class="prose"><slot /></article>
+  <a class="more" href={url('/writing/')}>← all writing</a>
+</Base>

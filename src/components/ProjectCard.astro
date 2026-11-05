@@ -1,0 +1,24 @@
+---
+import type { Project } from '../lib/url';
+
+interface Props {
+  project: Project;
+  full?: boolean;
+}
+
+const { project: p, full = false } = Astro.props;
+const pct = typeof p.progress === 'number' ? Math.max(0, Math.min(100, p.progress)) : null;
+---
+
+<article class="card" id={p.slug}>
+  <div class="top">
+    <span>{p.link ? <a href={p.link}>{p.name}</a> : p.name}</span>
+    <span class={`pill ${p.status}`}>{p.status}</span>
+  </div>
+  <p>{p.summary}</p>
+  {full && p.points && p.points.length > 0 && (
+    <ul>{p.points.map((pt) => <li>{pt}</li>)}</ul>
+  )}
+  {p.stat && <span class="stat">{p.stat}</span>}
+  {pct !== null && <div class="bar" role="progressbar" aria-valuenow={pct} aria-valuemin="0" aria-valuemax="100"><i style={`width:${pct}%`}></i></div>}
+</article>

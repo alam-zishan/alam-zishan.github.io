@@ -1,0 +1,23 @@
+---
+import { getPosts, fmtDate } from '../lib/posts';
+
+interface Props {
+  limit?: number;
+}
+
+const { limit } = Astro.props;
+const posts = getPosts().slice(0, limit);
+---
+
+{posts.length === 0 ? (
+  <p class="empty">Nothing yet. Soon.</p>
+) : (
+  <div>
+    {posts.map((p) => (
+      <div class="post">
+        <a href={p.url}>{p.title}</a>
+        <time datetime={p.date.toISOString()}>{fmtDate(p.date)}</time>
+      </div>
+    ))}
+  </div>
+)}

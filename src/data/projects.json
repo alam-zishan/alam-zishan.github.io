@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "pokemon-agent",
+    "name": "Pokémon Platinum agent",
+    "status": "live",
+    "summary": "An agent learning to play Pokémon Platinum from screen input.",
+    "stat": "",
+    "progress": null,
+    "points": [],
+    "link": ""
+  },
+  {
+    "slug": "training-log",
+    "name": "Training log",
+    "status": "live",
+    "summary": "Progressive overload tracking for calisthenics and weighted resistance work.",
+    "stat": "",
+    "progress": null,
+    "points": [],
+    "link": ""
+  },
+  {
+    "slug": "event-radar",
+    "name": "Event radar",
+    "status": "live",
+    "summary": "Finds local tech events that match my interests and signs me up.",
+    "stat": "",
+    "progress": null,
+    "points": [],
+    "link": ""
+  },
+  {
+    "slug": "research-agent",
+    "name": "User-research agent",
+    "status": "wip",
+    "summary": "A local model (LFM3) with my Hermes agent that finds and screens user-research studies.",
+    "stat": "",
+    "progress": null,
+    "points": [],
+    "link": ""
+  },
+  {
+    "slug": "ayn-thor",
+    "name": "AYN Thor tuning",
+    "status": "wip",
+    "summary": "Tuning emulation performance on a handheld.",
+    "stat": "",
+    "progress": null,
+    "points": [],
+    "link": ""
+  }
+]

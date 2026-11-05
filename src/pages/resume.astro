@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import Experience from '../components/Experience.astro';
+import { profile, experience, skills } from '../data/profile';
+---
+
+<Base title="Resume">
+  <h1>Resume</h1>
+  <p class="lede">{profile.title}{profile.location && ` · ${profile.location}`}</p>
+  {/* To offer a PDF, drop resume.pdf in public/ and uncomment:
+  <div class="links"><a href={url('/resume.pdf')}>resume.pdf ↓</a></div> */}
+
+  <h2 class="section">Experience</h2>
+  <Experience jobs={experience} full />
+
+  {skills.length > 0 && (
+    <>
+      <h2 class="section">Skills</h2>
+      <p class="lede">{skills.join(' · ')}</p>
+    </>
+  )}
+</Base>
